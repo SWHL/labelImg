@@ -2,15 +2,11 @@
 # -*- coding: utf-8 -*-
 import argparse
 import codecs
-import distutils.spawn
 import os.path
 import platform
-import re
 import shutil
-import subprocess
 import sys
 import webbrowser as wb
-from collections import defaultdict
 from functools import partial
 
 try:

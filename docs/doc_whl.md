@@ -1,1 +1,1 @@
-### See details for [LabelConvert](https://github.com/SWHL/labelImg)
+### See details for [LabelConvert](https://github.com/SWHL/labelImg2)

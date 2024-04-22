@@ -9,7 +9,7 @@ from setuptools import find_namespace_packages, setup
 
 cur_dir = Path(__file__).resolve().parent
 
-NAME = "labelImg2"
+NAME = "label_img"
 REQUIRED_DEP = ["pyqt5", "lxml"]
 
 
@@ -64,7 +64,7 @@ setup(
     package_data={"": ["*.txt", "*.png", "*.svg", "*.icns", "*.properties"]},
     package_dir={"": NAME},
     packages=find_namespace_packages(where=NAME),
-    entry_points={"console_scripts": ["labelImg=labelImg2.main:main"]},
+    entry_points={"console_scripts": ["labelImg=label_img.main:main"]},
     include_package_data=True,
     install_requires=REQUIRED_DEP,
     license="MIT license",

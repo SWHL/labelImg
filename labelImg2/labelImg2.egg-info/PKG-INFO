@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: labelImg2
+Version: 1.8.8
+Summary: LabelImg is a graphical image annotation tool and label object bounding boxes in images
+Home-page: https://github.com/SWHL/labelImg
+Author: SWHL
+Author-email: liekkaskono@163.com
+License: MIT license
+Keywords: labelImg labelTool development annotation deeplearning
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.6,<3.12
+License-File: LICENSE

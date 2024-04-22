@@ -1,6 +1,6 @@
-resources/icons/.DS_Store
-resources.py
-labelImg.egg-info*
+.DS_Store
+
+.eggs
 
 *.pyc
 .*.swp

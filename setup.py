@@ -37,7 +37,7 @@ elif _platform == "darwin":
     # MAC OS X
     SET_REQUIRES.append("py2app")
 
-resources_dir = cur_dir / "labelImg" / "resources"
+resources_dir = cur_dir / "label_image" / "resources"
 OPTIONS = {
     "argv_emulation": True,
     "iconfile": str(resources_dir / "icons" / "app.icns"),
@@ -59,16 +59,16 @@ setup(
     long_description_content_type="text/markdown",
     author="SWHL",
     author_email="liekkaskono@163.com",
-    url="https://github.com/SWHL/labelImg",
+    url="https://github.com/SWHL/label_image",
     python_requires=">=3.6,<3.12",
     package_data={"": ["*.txt", "*.png", "*.svg", "*.icns", "*.properties"]},
     package_dir={"": NAME},
     packages=find_namespace_packages(where=NAME),
-    entry_points={"console_scripts": ["labelImg=label_image.main:main"]},
+    entry_points={"console_scripts": ["label_image=label_image.main:main"]},
     include_package_data=True,
     install_requires=REQUIRED_DEP,
     license="MIT license",
-    keywords="labelImg labelTool development annotation deeplearning",
+    keywords="label_image labelTool development annotation deeplearning",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",

@@ -3,6 +3,7 @@
 import sys
 from pathlib import Path
 from sys import platform as _platform
+from typing import List
 
 from get_pypi_latest_version import GetPyPiLatestVersion
 from setuptools import find_namespace_packages, setup
@@ -12,8 +13,23 @@ cur_dir = Path(__file__).resolve().parent
 NAME = "labelImg"
 REQUIRED_DEP = ["pyqt5", "lxml"]
 
-with open("HISTORY.rst", "rb") as history_file:
-    history = history_file.read().decode("UTF-8")
+
+def read_txt(txt_path: str) -> List:
+    if not isinstance(txt_path, str):
+        txt_path = str(txt_path)
+
+    with open(txt_path, "r", encoding="utf-8") as f:
+        data = list(map(lambda x: x.rstrip("\n"), f))
+    return data
+
+
+def get_readme() -> str:
+    root_dir = Path(__file__).resolve().parent
+    readme_path = str(root_dir / "docs" / "doc_whl.md")
+    with open(readme_path, "r", encoding="utf-8") as f:
+        readme = f.read()
+    return readme
+
 
 obtainer = GetPyPiLatestVersion()
 try:
@@ -67,9 +83,6 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.3",
-        "Programming Language :: Python :: 3.4",
-        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",

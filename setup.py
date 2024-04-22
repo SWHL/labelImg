@@ -3,7 +3,6 @@
 import sys
 from pathlib import Path
 from sys import platform as _platform
-from typing import List
 
 from get_pypi_latest_version import GetPyPiLatestVersion
 from setuptools import find_namespace_packages, setup
@@ -12,15 +11,6 @@ cur_dir = Path(__file__).resolve().parent
 
 NAME = "labelImg2"
 REQUIRED_DEP = ["pyqt5", "lxml"]
-
-
-def read_txt(txt_path: str) -> List:
-    if not isinstance(txt_path, str):
-        txt_path = str(txt_path)
-
-    with open(txt_path, "r", encoding="utf-8") as f:
-        data = list(map(lambda x: x.rstrip("\n"), f))
-    return data
 
 
 def get_readme() -> str:
@@ -65,6 +55,8 @@ setup(
     name=NAME,
     version=VERSION_NUM,
     description="LabelImg is a graphical image annotation tool and label object bounding boxes in images",
+    long_description=get_readme(),
+    long_description_content_type="text/markdown",
     author="SWHL",
     author_email="liekkaskono@163.com",
     url="https://github.com/SWHL/labelImg",

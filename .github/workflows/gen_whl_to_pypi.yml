@@ -1,0 +1,44 @@
+name: Push label_convert to pypi
+
+on:
+  push:
+    # branches: [ main ]
+    # paths:
+      # - 'label_convert/**'
+      # - 'docs/doc_whl.md'
+      # - 'setup.py'
+      # - '.github/workflows/gen_whl_to_pypi.yml'
+    tags:
+      - v*
+
+jobs:
+  GenerateWHL_PushPyPi:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          architecture: 'x64'
+
+      - name: Run setup.py
+        run: |
+          python -m pip install --upgrade pip
+          pip install wheel get_pypi_latest_version
+          python setup.py bdist_wheel ${{ github.event.head_commit.message }}
+
+      # - name: Publish distribution 📦 to Test PyPI
+      #   uses: pypa/gh-action-pypi-publish@v1.5.0
+      #   with:
+      #     password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+      #     repository_url: https://test.pypi.org/legacy/
+      #     packages_dir:  dist/
+
+      - name: Publish distribution 📦 to PyPI
+        uses: pypa/gh-action-pypi-publish@v1.5.0
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
+          packages_dir: dist/
